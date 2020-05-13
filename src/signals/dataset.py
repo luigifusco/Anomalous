@@ -1,9 +1,10 @@
 import random
 import wfdb
 import numpy as np
-import scipy.signal
 import sklearn.model_selection
-import heartpy as hp
+import os
+
+import src.miscellaneous
 
 
 def create_segmented_signals(signal, annmap, sample_rate, sec):
@@ -107,3 +108,20 @@ def create_dataset(note, filelist, sample_rate):
     testY = [[1, 0]] * len(patient_sane_test) + [[0, 1]] * len(patient_ill_test)
 
     return trainX, trainY, testX, testY
+
+
+def create_and_save_datasets(root='data/mals/'):
+    notes = src.miscellaneous.get_notes()
+    filelist = src.miscellaneous.get_filelist()
+
+    for note in notes:
+        print("creating dataset for anomaly", note)
+        trainX, trainY, testX, testY = create_dataset(note, filelist, 257)
+        print("saving...")
+        with open(os.path.join(root, 'mal_' + note + '.mal'), 'wb') as file:
+            np.savez(file,
+                     trainX=np.array(trainX, dtype=np.float32),
+                     trainY=np.array(trainY, dtype=np.uint8),
+                     testX=np.array(testX, dtype=np.float32),
+                     testY=np.array(testY, dtype=np.uint8)
+                     )

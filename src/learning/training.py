@@ -1,5 +1,9 @@
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Conv1D, MaxPooling1D, Flatten
+import numpy as np
+import os
+
+import src.miscellaneous
 
 
 def train_model(trainX, trainY, testX, testY):
@@ -30,3 +34,14 @@ def train_model(trainX, trainY, testX, testY):
               validation_data=(testX, testY))
 
     return model
+
+
+def create_and_save_networks(root='data/mals/'):
+    notes = src.miscellaneous.get_notes()
+
+    for note in notes:
+        print("creating net for anomaly", note)
+        data = np.load(os.path.join(root, 'mal_' + note + '.mal'))
+        model = train_model(data['trainX'], data['trainY'], data['testX'], data['testY'])
+        print("saving...")
+        model.save(os.path.join('models', 'model_' + note + '.h5'))
