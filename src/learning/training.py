@@ -6,23 +6,27 @@ import os
 import src.miscellaneous
 
 
+def get_model():
+    return Sequential([
+        Conv1D(32, kernel_size=5, input_shape=(514, 12)),
+        MaxPooling1D(),
+        Activation('relu'),
+        Conv1D(64, kernel_size=5),
+        MaxPooling1D(),
+        Activation('relu'),
+        Conv1D(128, kernel_size=5),
+        MaxPooling1D(),
+        Activation('relu'),
+        Flatten(),
+        Dense(20),
+        Activation('relu'),
+        Dense(2),
+        Activation('softmax')
+    ])
+
+
 def train_model(trainX, trainY, testX, testY):
-    model = Sequential([
-            Conv1D(32, kernel_size=5, input_shape=(514, 12)),
-            MaxPooling1D(),
-            Activation('relu'),
-            Conv1D(64, kernel_size=5),
-            MaxPooling1D(),
-            Activation('relu'),
-            Conv1D(128, kernel_size=5),
-            MaxPooling1D(),
-            Activation('relu'),
-            Flatten(),
-            Dense(20),
-            Activation('relu'),
-            Dense(2),
-            Activation('softmax')
-        ])
+    model = get_model()
     model.compile(optimizer='rmsprop',
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
