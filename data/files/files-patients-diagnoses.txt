@@ -1,0 +1,96 @@
+patient 1
+I01 I02
+Coronary artery disease, arterial hypertension
+patient 2
+I03 I04 I05
+Acute MI
+patient 3
+I06 I07
+Transient ischemic attack
+patient 4
+I08
+
+patient 5
+I09 I10 I11
+
+patient 6
+I12 I13 I14
+
+patient 7
+I15
+Transient ischemic attack
+patient 8
+I16 I17
+Transient ischemic attack
+patient 9
+I18 I19
+
+patient 10
+I20 I21 I22
+Coronary artery disease, arterial hypertension, left ventricular hypertrophy
+patient 11
+I23 I24
+Earlier MI
+patient 12
+I25 I26
+Sinus node dysfunction
+patient 13
+I27 I28
+
+patient 14
+I29 I30 I31 I32
+
+patient 15
+I33 I34
+
+patient 16
+I35 I36 I37
+Coronary artery disease, arterial hypertension, left ventricular hypertrophy
+patient 17
+I38 I39
+Coronary artery disease, arterial hypertension
+patient 18
+I40 I41
+Transient ischemic attack
+patient 19
+I42 I43
+
+patient 20
+I44 I45 I46
+Coronary artery disease, arterial hypertension, left ventricular hypertrophy
+patient 21
+I47 I48
+Earlier MI
+patient 22
+I49 I50
+
+patient 23
+I51 I52 I53
+
+patient 24
+I54 I55 I56
+Earlier MI
+patient 25
+I57 I58
+Coronary artery disease, arterial hypertension
+patient 26
+I59 I60 I61
+
+patient 27
+I62 I63 I64
+Acute MI
+patient 28
+I65 I66 I67
+
+patient 29
+I68 I69
+
+patient 30
+I70 I71
+
+patient 31
+I72 I73
+Coronary artery disease, arterial hypertension, left ventricular hypertrophy
+patient 32
+I74 I75
+Earlier MI

@@ -1,0 +1,150 @@
+I01
+PVCs, noise
+I02
+ventricular trigeminy, ventricular couplets
+I03
+ST elevation, PVCs
+I04
+bradycardia, tachycardia, PVCs, ventricular couplets, paroxysmal VT
+I05
+paroxysmal VT
+I06
+ST changes, PVCs
+I07
+PVCs, supraventricular triplets
+I08
+ventricular bigeminy, ventricular couplets
+I09
+ventricular couplets, ventricular escape beats, AV nodal block 2 degree Moebits 1
+I10
+tachycardia, AV nodal block 2 degree Moebits 1, noise
+I11
+PVCs, AV nodal block 2 degree Moebits 1
+I12
+ST depression, ventricular couplets
+I13
+PVCs
+I14
+PVCs, baseline wander
+I15
+ST depression, PVCs
+I16
+right bundle branch block, polymorphic PVCs, noise
+I17
+bradycardia, PVCs, right bundle branch block,  
+I18
+PVCs, numerous fusion beats
+I19
+ventricular trigeminy, PVCs
+I20
+ventricular couplets, fusion beats; APCs, atrial couplets, blocked APCs, paroxysmal supraventricular tachycardia
+I21
+PVCs, APCs, atrial couplets, blocked APCs
+I22
+paroxysmal VT, APCs, atrial couplets, blocked APCs
+I23
+polymorphic PVCs, intraventricular block
+I24
+PVCs,   ST depression
+I25
+paroxysmal VT
+I26
+ventricular couplets, paroxysmal supraventricular tachycardia
+I27
+ventricular bigeminy, trigeminy, PVCs
+I28
+PVCs on bradycardia
+I29
+PVCs, couplets, paroxysmal VT, noise
+I30
+VT
+I31
+paroxysmal VT, baseline wander
+I32
+ventricular bigeminy
+I33
+PVCs, SVEBs,  supraventricular couplets
+I34
+SVEBs, couplets,  paroxysmal supraventricular tachycardia with aberrated QRS
+I35
+ventricular couplets, fusion beats on tachycardia
+I36
+PVCs, ventricular couplets as bigeminy
+I37
+PVCs on bradycardia
+I38
+PVCs, couplets, triplets on tachycardia
+I39
+PVCs and couplets on bradycardia
+I40
+PVCs, ventricular bigeminy, ST change
+I41
+PVCs, sinus arrhythmia, noise
+I42
+PVCs, ventricular couplets, ventricular bigeminy, paroxysmal VT
+I43
+PVCs, ventricular couplets, ventricular bigeminy, paroxysmal VT, ventricular rhythm
+I44
+PVCs, paroxysmal VT
+I45
+ventricular couplets
+I46
+PVCs on tachycardia, fusion beats
+I47
+PVCs on sinus arrhythmia, ventricular bigeminy
+I48
+PVCs, ventricular couplets
+I49
+PVCs on bradycardia, atrial fibrillation
+I50
+PVCs, tachycardia, atrial fibrillation, ST depression
+I51
+PVCs on tachycardia, bigeminy, trigeminy
+I52
+PVCs on bradycardia, ventricular bigeminy
+I53
+PVCs, ventricular couplets and R-on-T
+I54
+PVCs, ventricular couplets, paroxysmal VT, noise
+I55
+paroxysmal VT
+I56
+PVCs , positional form and HR change 
+I57
+fusion beats, ventricular couplets on tachycardia
+I58
+PVCs on bradycardia
+I59
+PVCs, ventricular couplets, ST elevation
+I60
+ST elevation
+I61
+positional changes, bradycardia
+I62
+ventricular rhythm, ST elevation
+I63
+PVCs
+I64
+PVCs, negative T
+I65
+PVCs, couplets, paroxysmal VT, fusion beats on tachycardia
+I66
+paroxysmal VT, noise
+I67
+paroxysmal VT on tachycardia
+I68
+PVCs, WPW
+I69
+PVCs and ventricular couplets on bradycardia, WPW
+I70
+SVEBs with wide QRS, WPW
+I71
+paroxysmal atrial fibrillation, WPW, bundle-branch blocks
+I72
+PVCs and couplets on tachycardia
+I73
+PVCs on bradycardia, SVEBs, couplets
+I74
+numerous fusion beats and PVCs on tachycardia
+I75
+PVCs and paroxysmal VT on bradycardia

@@ -1,3 +1,9 @@
+# project-related
+*.dat
+*.atr
+*.hea
+*.mal
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

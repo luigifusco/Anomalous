@@ -1,0 +1,34 @@
+This database consists of 75 annotated recordings extracted from 32 Holter records. Each record is 30 minutes long and contains 12 standard leads, each sampled at 257 Hz, with gains varying from 250 to 1100 analog-to-digital converter units per millivolt. Gains for each record are specified in its .hea file. The reference annotation files contain over 175,000 beat annotations in all. 
+
+The original records were collected from patients undergoing tests for coronary artery disease (17 men and 15 women, aged 18-80; mean age: 58). None of the patients had pacemakers; most had ventricular ectopic beats. In selecting records to be included in the database, preference was given to subjects with ECGs consistent with ischemia, coronary artery disease, conduction abnormalities, and arrhythmias; observations of those selected included: 
+
+Diagnosis/ECG abnormalities		Patients
+
+Acute MI		2
+
+Transient ischemic attack (angina pectoris)	5
+
+Earlier MI	4
+
+Coronary artery disease with arterial hypertension		7 (4 with ECGs consistent with left ventricular hypertrophy)
+
+Sinus node dysfunction	1
+
+Atrial fibrillation or supraventricular tachycardia	3 (2 with paroxysmal)
+
+WPW		2
+
+Intraventricular heart block		3
+
+AV block		1
+
+Supraventricular ectopy	18
+
+Diagnoses were confirmed by enzyme check, coronary angiography, electrophysiological study, pressure monitoring where necessary. 
+
+Patients, dianoses and record features are identified in .hea files. Summary is availiable in record-descriptions.txt and files-patients-diagnoses.txt
+
+The annotations were produced by an automatic algorithm and then corrected manually, following the standard PhysioBank beat annotation definitions. The algorithm generally places beat annotations in the middle of the QRS complex (as determined from all 12 leads); the locations have not been manually corrected, however, and there may be occasional misaligned annotations as a result. 
+
+This database was contributed by St.-Petersburg Institute of Cardiological Technics (Incart), Saint-Petersburg, Russia. The database was initially developed by Viktor Tihonenko (vmt@incart.ru) and Alexander Khaustov (avk@incart.ru). Additional verification was done by Sergey Ivanov and Alexei Rivin (Incart). Please refer questions and corrections to avk@incart.ru. 
+
