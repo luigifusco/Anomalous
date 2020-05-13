@@ -3,6 +3,7 @@ import wfdb
 import numpy as np
 import scipy.signal
 import sklearn.model_selection
+import heartpy as hp
 
 
 def create_segmented_signals(signal, annmap, sample_rate, sec):
@@ -41,13 +42,6 @@ def create_segmented_signals(signal, annmap, sample_rate, sec):
                 )
 
     return segments
-
-
-def filter_signal(signal, sample_rate, n_samp):
-    filt = scipy.signal.firwin(n_samp, cutoff=5, fs=sample_rate, pass_zero='highpass')
-    padding = (n_samp // 2)
-
-    return np.convolve(signal, filt)[padding:-padding]
 
 
 def create_dataset(note, filelist, sample_rate):

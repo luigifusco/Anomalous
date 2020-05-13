@@ -2,7 +2,7 @@ import glob
 import os
 import numpy as np
 
-from src.signals import create_dataset
+from src.signals.dataset import create_dataset
 from src.learning import train_model
 
 filelist = [filename.split('.')[0] for filename in glob.glob('data/files/*.dat')]
