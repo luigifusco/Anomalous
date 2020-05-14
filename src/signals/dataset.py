@@ -1,3 +1,8 @@
+"""
+Contains functions to load data from St.Petersburg and to create the specific anomaly datasets
+"""
+
+
 import random
 import wfdb
 import numpy as np
@@ -5,9 +10,19 @@ import sklearn.model_selection
 import os
 
 import src.miscellaneous
+from src.signals.processing import filter_signal
 
 
 def create_segmented_signals(signal, annmap, sample_rate, sec):
+    """
+    Creates segmented signals containing all possible anomalies from a signal and its annmap
+
+    :param signal: the signal to segment
+    :param annmap: map containing the positions of the annotations
+    :param sample_rate: the sample rate of the signal
+    :param sec: length of the segments
+    :return: a list of dictionaries containing the segments and metadata
+    """
     seg_len = sec * sample_rate
     segments = []
 
@@ -45,7 +60,17 @@ def create_segmented_signals(signal, annmap, sample_rate, sec):
     return segments
 
 
-def create_dataset(note, filelist, sample_rate):
+def create_dataset(note, sample_rate):
+    """
+    Creates a dataset of a specific anomaly
+
+    :param note: the anomaly
+    :param sample_rate: the sample rate of the signals
+    :return:
+    """
+
+    filelist = src.miscellaneous.get_filelist()
+
     train_test_ratio = 0.3
     threshold = 100
 
@@ -111,6 +136,11 @@ def create_dataset(note, filelist, sample_rate):
 
 
 def create_and_save_datasets(root='data/mals/'):
+    """
+    Main function to create datasets and save them
+
+    :param root: the root folder to save the datasets
+    """
     notes = src.miscellaneous.get_notes()
     filelist = src.miscellaneous.get_filelist()
 
