@@ -7,7 +7,7 @@ import numpy as np
 import heartpy as hp
 
 
-def get_filter():
+def get_filter(n_samp=101, sample_rate=257):
     return scipy.signal.firwin(n_samp, cutoff=5, fs=sample_rate, pass_zero='highpass')
 
 
@@ -28,7 +28,7 @@ def filter_signal(signal, filt, sample_rate=257, n_samp=101):
     return newsig
 
 
-def get_bpm(ecg_signal, sample_rate, start_at, finish_at):
+def get_bpm(ecg_signal, sample_rate):
     """
     calculate bpm filtering the signal and upsampling it for better results
     :param ecg_signal: 1 lead from an ecg
@@ -37,7 +37,7 @@ def get_bpm(ecg_signal, sample_rate, start_at, finish_at):
     :param finish_at: this defines the end portion of the ecg that you want to analyse
     :return: the bpm for the given sequence
     """
-    upsampled = scipy.signal.resample(filtered, len(filtered) * 4)
+    upsampled = scipy.signal.resample(ecg_signal, len(ecg_signal) * 4)
     wd, m = hp.process(hp.scale_data(upsampled), sample_rate * 4)
 
     for measure in m.keys():
