@@ -19,7 +19,7 @@ class Pynomalous:
     def analyze_signal(self, signal, freq=257):
         analysis = {"anomalies": {}}
         signal = filter_signal(signal, self.filt, freq)
-        analysis["bpm"] = get_bpm(signal)
+        analysis["bpm"] = get_bpm(signal[:,0])
         segments = split_overlapping(signal)
         for note in self.notes:
             analysis["anomalies"][note] = self.predict_segments(segments, note)
