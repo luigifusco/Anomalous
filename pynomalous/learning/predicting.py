@@ -7,7 +7,7 @@ import os
 from pynomalous.learning.training import get_model
 
 
-def load_weights(mal, weights_root='data/models/'):
+def load_trained_net(mal, weights_root='data/models/'):
     """
     Generates a neural network, loads in the neural network the pretrained weights and returns it
 

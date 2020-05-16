@@ -10,10 +10,10 @@ import sklearn.model_selection
 import os
 
 import pynomalous.miscellaneous
-from pynomalous.signals.processing import filter_signal
+from pynomalous.signals.processing import get_filter, filter_signal
 
 
-def create_segmented_signals(signal, annmap, sample_rate, sec):
+def create_segmented_signals(signal, annmap, sample_rate=257, sec=2):
     """
     Creates segmented signals containing all possible anomalies from a signal and its annmap
 
@@ -60,7 +60,7 @@ def create_segmented_signals(signal, annmap, sample_rate, sec):
     return segments
 
 
-def create_dataset(note, sample_rate):
+def create_dataset(note, sample_rate=257):
     """
     Creates a dataset of a specific anomaly
 
@@ -68,6 +68,8 @@ def create_dataset(note, sample_rate):
     :param sample_rate: the sample rate of the signals
     :return:
     """
+
+    filt = get_filter()
 
     filelist = pynomalous.miscellaneous.get_filelist()
 
@@ -91,8 +93,7 @@ def create_dataset(note, sample_rate):
 
         # signal transformation pipeline
         signal = record.p_signal
-        for i in range(signal.shape[-1]):
-            signal[:, i] = filter_signal(signal[:, i], sample_rate, 101)
+        signal = filter_signal(signal)
 
         segments += create_segmented_signals(signal, annmap, sample_rate, 2)
         del signal
@@ -146,7 +147,7 @@ def create_and_save_datasets(root='data/mals/'):
 
     for note in notes:
         print("creating dataset for anomaly", note)
-        trainX, trainY, testX, testY = create_dataset(note, filelist, 257)
+        trainX, trainY, testX, testY = create_dataset(note, filelist)
         print("saving...")
         with open(os.path.join(root, 'mal_' + note + '.mal'), 'wb') as file:
             np.savez(file,

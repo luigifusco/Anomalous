@@ -7,7 +7,11 @@ import numpy as np
 import heartpy as hp
 
 
-def filter_signal(signal, sample_rate, n_samp):
+def get_filter():
+    return scipy.signal.firwin(n_samp, cutoff=5, fs=sample_rate, pass_zero='highpass')
+
+
+def filter_signal(signal, filt, sample_rate=257, n_samp=101):
     """
     Filters signals
 
@@ -16,13 +20,15 @@ def filter_signal(signal, sample_rate, n_samp):
     :param n_samp: number of samples of the filter
     :return:
     """
-    filt = scipy.signal.firwin(n_samp, cutoff=5, fs=sample_rate, pass_zero='highpass')
+    newsig = np.array(signal)
     padding = (n_samp // 2)
+    for i in range(newsig.shape[-1]):
+        newsig[:, i] = np.convolve(newsig[:, i], filt)[padding:-padding]
 
-    return np.convolve(signal, filt)[padding:-padding]
+    return newsig
 
 
-def obtain_bpm(ecg_signal, sample_rate, start_at, finish_at):
+def get_bpm(ecg_signal, sample_rate, start_at, finish_at):
     """
     calculate bpm filtering the signal and upsampling it for better results
     :param ecg_signal: 1 lead from an ecg
@@ -31,8 +37,6 @@ def obtain_bpm(ecg_signal, sample_rate, start_at, finish_at):
     :param finish_at: this defines the end portion of the ecg that you want to analyse
     :return: the bpm for the given sequence
     """
-    filtered = hp.filter_signal(ecg_signal[start_at:finish_at], cutoff=5, sample_rate=sample_rate,
-                                filtertype='highpass')
     upsampled = scipy.signal.resample(filtered, len(filtered) * 4)
     wd, m = hp.process(hp.scale_data(upsampled), sample_rate * 4)
 
@@ -41,7 +45,7 @@ def obtain_bpm(ecg_signal, sample_rate, start_at, finish_at):
             return m[measure]
 
 
-def tachycardia_level(age, bpm):
+def get_tachycardia_level(age, bpm):
     """
     This function returns the level 0->1->2 where 2 is the maximum of tachycardia
     :param age: the age of the patient
@@ -99,7 +103,7 @@ def tachycardia_level(age, bpm):
             return 0
 
 
-def bradycardia_level(bpm):
+def get_bradycardia_level(bpm):
     """
     Returns the bradycardia level for the corresponding bpm
     :param bpm: the revealed bpm
@@ -111,3 +115,19 @@ def bradycardia_level(bpm):
         return 1
     else:
         return 2
+
+
+def split_overlapping(signal, freq=257, time=2, shift=0.5):
+    """
+    Splits the signal data into segments. Expects signal with dim-0 samples, dim-1 leads (12)
+    :param signal: the signal
+    :param freq: frequency rate of the signal
+    :param time: time length of the segments
+    :param shift: time shift in taking different section
+    :return: list of signal segments
+    """
+    seglen = int(freq*time)
+    shiftlen = int(shift*time)
+    siglen = signal.shape[0]
+
+    return [signal[i:i+seglen, :] for i in range(0, siglen-seglen, shiftlen)]
