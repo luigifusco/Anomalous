@@ -9,8 +9,8 @@ import numpy as np
 import sklearn.model_selection
 import os
 
-import src.miscellaneous
-from src.signals.processing import filter_signal
+import pynomalous.miscellaneous
+from pynomalous.signals.processing import filter_signal
 
 
 def create_segmented_signals(signal, annmap, sample_rate, sec):
@@ -69,7 +69,7 @@ def create_dataset(note, sample_rate):
     :return:
     """
 
-    filelist = src.miscellaneous.get_filelist()
+    filelist = pynomalous.miscellaneous.get_filelist()
 
     train_test_ratio = 0.3
     threshold = 100
@@ -141,8 +141,8 @@ def create_and_save_datasets(root='data/mals/'):
 
     :param root: the root folder to save the datasets
     """
-    notes = src.miscellaneous.get_notes()
-    filelist = src.miscellaneous.get_filelist()
+    notes = pynomalous.miscellaneous.get_notes()
+    filelist = pynomalous.miscellaneous.get_filelist()
 
     for note in notes:
         print("creating dataset for anomaly", note)

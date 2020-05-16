@@ -7,7 +7,7 @@ from keras.layers import Dense, Activation, Conv1D, MaxPooling1D, Flatten
 import numpy as np
 import os
 
-import src.miscellaneous
+import pynomalous.miscellaneous
 
 
 def get_model():
@@ -65,7 +65,7 @@ def create_and_save_networks(root='data/mals/'):
 
     :param root: the root of the mals
     """
-    notes = src.miscellaneous.get_notes()
+    notes = pynomalous.miscellaneous.get_notes()
 
     for note in notes:
         print("creating net for anomaly", note)

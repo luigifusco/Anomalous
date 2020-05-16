@@ -4,7 +4,7 @@ Contrains functions relative to predicting using the neural networks
 
 import os
 
-from src.learning.training import get_model
+from pynomalous.learning.training import get_model
 
 
 def load_weights(mal, weights_root='data/models/'):
