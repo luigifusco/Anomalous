@@ -45,11 +45,11 @@ def get_bpm(ecg_signal, sample_rate):
             return m[measure]
 
 
-def get_tachycardia_level(age, bpm):
+def get_tachycardia_level(bpm, age):
     """
     This function returns the level 0->1->2 where 2 is the maximum of tachycardia
-    :param age: the age of the patient
     :param bpm: the registered bpm
+    :param age: the age of the patient
     :return: the level of tachycardia
     """
     if age <= 45:
@@ -124,10 +124,13 @@ def split_overlapping(signal, freq=257, time=2, shift=0.5):
     :param freq: frequency rate of the signal
     :param time: time length of the segments
     :param shift: time shift in taking different section
-    :return: list of signal segments
+    :return: list of signal segments and list of starting sample of segment
     """
     seglen = int(freq*time)
     shiftlen = int(shift*time)
     siglen = signal.shape[0]
 
-    return [signal[i:i+seglen, :] for i in range(0, siglen-seglen, shiftlen)]
+    times = range(0, siglen-seglen, shiftlen)
+    segments = [signal[i:i+seglen, :] for i in times]
+
+    return segments, times

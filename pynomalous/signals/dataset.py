@@ -93,7 +93,7 @@ def create_dataset(note, sample_rate=257):
 
         # signal transformation pipeline
         signal = record.p_signal
-        signal = filter_signal(signal)
+        signal = filter_signal(signal, filt)
 
         segments += create_segmented_signals(signal, annmap, sample_rate, 2)
         del signal
