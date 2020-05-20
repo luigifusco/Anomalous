@@ -1,5 +1,6 @@
 from PySide2.QtCore import Slot
-from PySide2.QtWidgets import QVBoxLayout, QWidget, QComboBox, QFormLayout
+import PySide2.QtCore as QtCore
+from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout, QWidget, QComboBox, QFormLayout
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -7,14 +8,15 @@ import matplotlib.pyplot as plt
 
 
 class PlotWidget(QWidget):
-    def __init__(self, parent=None, w=450, h=350):
+    def __init__(self, parent=None, w=400, h=350, toolbar=False):
         super().__init__(parent)
 
-        fig, self.ax = plt.subplots()
-        self.canvas = FigureCanvas(fig)
-        self.toolbar = NavigationToolbar(self.canvas, self)
+        self.fig, self.ax = plt.subplots()
+        self.canvas = FigureCanvas(self.fig)
         self.lay = QVBoxLayout(self)
-        self.lay.addWidget(self.toolbar)
+        if toolbar:
+            self.toolbar = NavigationToolbar(self.canvas, self)
+            self.lay.addWidget(self.toolbar)
         self.lay.addWidget(self.canvas)
 
         self.line, *_ = self.ax.plot([])
@@ -28,6 +30,7 @@ class PlotWidget(QWidget):
 
         self.ax.set_xlim(0, len(data))
         self.ax.set_ylim(min(data), max(data))
+        self.fig.tight_layout()
         self.canvas.draw()
 
 
@@ -36,7 +39,10 @@ class ComboPlotWidget(PlotWidget):
         super().__init__(parent)
 
         self.combo = QComboBox()
-        self.lay.insertWidget(0, self.combo)
+        self.combo.setFixedWidth(150)
+        self.lay.insertWidget(0, self.combo, alignment=QtCore.Qt.AlignCenter)
+        self.lay.setMargin(0)
+        self.lay.setSpacing(0)
 
     @Slot(list)
     def update_combo_box(self, data):
@@ -53,6 +59,7 @@ class DerivationsWidget(QWidget):
         self.lay = QFormLayout()
         self.lay.addRow(self.plots[0], self.plots[1])
         self.lay.addRow(self.plots[2], self.plots[3])
+        self.lay.setSpacing(0)
 
         self.setLayout(self.lay)
 
@@ -62,9 +69,22 @@ class AllPlotsWidget(QWidget):
         super().__init__(parent)
 
         self.derivations = DerivationsWidget()
-        self.bpm = PlotWidget(w=900)
+        self.bpm = PlotWidget(w=800)
         self.lay = QVBoxLayout()
         self.lay.addWidget(self.derivations)
         self.lay.addWidget(self.bpm)
+
+        self.setLayout(self.lay)
+
+
+class AllData(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.lay = QHBoxLayout()
+        self.plots = AllPlotsWidget()
+        self.indicators = PlotWidget()
+        self.lay.addWidget(self.plots)
+        self.lay.addWidget(self.indicators)
 
         self.setLayout(self.lay)
