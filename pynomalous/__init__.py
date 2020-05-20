@@ -1,3 +1,7 @@
+"""
+Main module, contains the object interface to all functionalities
+"""
+
 from pynomalous.learning.predicting import load_trained_net
 from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, split_overlapping, get_bradycardia_level, get_tachycardia_level
 
