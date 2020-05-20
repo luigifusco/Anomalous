@@ -3,11 +3,12 @@ import sys
 from PySide2.QtCore import QFile, QObject, Signal, QTimer
 from PySide2.QtWidgets import QApplication
 
-from pynomalous.gui.widgets import DerivationsWidget
+from pynomalous.gui.widgets import AllPlotsWidget
 
 import math
 import numpy as np
-
+import matplotlib.style as mplstyle
+mplstyle.use('fast')
 
 class DSL(QObject):
     dataChanged = Signal(list)
@@ -34,8 +35,8 @@ if __name__ == "__main__":
     dsl = DSL()
     dsl.mainLoop()
 
-    matplotlib_widget = DerivationsWidget()
+    matplotlib_widget = AllPlotsWidget()
     matplotlib_widget.show()
 
-    dsl.dataChanged.connect(matplotlib_widget.plots[0].update_plot)
+    dsl.dataChanged.connect(matplotlib_widget.derivations.plots[0].update_plot)
     sys.exit(app.exec_())
