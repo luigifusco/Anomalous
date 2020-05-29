@@ -1,5 +1,9 @@
+"""
+Main module, contains the object interface to all functionalities
+"""
+
 from pynomalous.learning.predicting import load_trained_net
-from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, split_overlapping
+from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, split_overlapping, get_bradycardia_level, get_tachycardia_level
 
 
 class Pynomalous:
@@ -12,16 +16,26 @@ class Pynomalous:
         """
         Gets a list of segments and returns a list of predictions for each segment
         :param segments: list of numpy arrays
+        :param note: anomaly to find
         :return: list of predictions
         """
         return self.nets[note].predict_classes(segments)
 
-    def analyze_signal(self, signal, freq=257):
-        analysis = {"anomalies": {}}
+    def analyze_signal(self, signal, age, freq=257):
+        analysis = {"bpm": {}, "anomalies": {}}
         signal = filter_signal(signal, self.filt, freq)
-        analysis["bpm"] = get_bpm(signal)
-        segments = split_overlapping(signal)
+        bpm = get_bpm(signal[:, 0])
+        analysis["bpm"] = {
+            "value": bpm,
+            "tachycardia": get_tachycardia_level(bpm, age),
+            "bradychardia": get_bradycardia_level(bpm)
+        }
+        segments, times = split_overlapping(signal)
         for note in self.notes:
-            analysis["anomalies"][note] = self.predict_segments(segments, note)
+            predictions = self.predict_segments(segments, note)
+            analysis["anomalies"][note] = {
+                "rateo": predictions.count(note) / len(predictions),
+                "positions": [t for t, p in zip(times, predictions) if p == note]
+            }
 
         return analysis
