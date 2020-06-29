@@ -1,6 +1,7 @@
 from PySide2.QtCore import Slot
 import PySide2.QtCore as QtCore
 from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout, QWidget, QComboBox, QFormLayout, QLineEdit, QPushButton
+from PySide2.QtWidgets import QGridLayout, QDial, QLabel
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -69,10 +70,51 @@ class AllPlotsWidget(QWidget):
         super().__init__(parent)
 
         self.derivations = DerivationsWidget()
-        self.bpm = PlotWidget(w=800)
         self.lay = QVBoxLayout()
         self.lay.addWidget(self.derivations)
-        self.lay.addWidget(self.bpm)
+
+        self.setLayout(self.lay)
+
+
+class Indicators(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.lay = QGridLayout()
+        self.button_names = [
+            "A",
+            "F",
+            "Q",
+            "n",
+            "R",
+            "B",
+            "S",
+            "j",
+            "+",
+            "V"
+        ]
+        self.buttons = {
+            "A": QPushButton("A"),
+            "F": QPushButton("F"),
+            "Q": QPushButton("Q"),
+            "n": QPushButton("n"),
+            "R": QPushButton("R"),
+            "B": QPushButton("B"),
+            "S": QPushButton("S"),
+            "j": QPushButton("j"),
+            "+": QPushButton("+"),
+            "V": QPushButton("V")
+        }
+
+        self.quality_label = QLabel("text")
+        self.beat_label = QLabel("text")
+
+
+        self.lay.addWidget(self.quality_label, 0, 0)
+        self.lay.addWidget(self.beat_label, 0, 1)
+
+        for i, b in zip(range(len(self.button_names)), self.button_names):
+            self.lay.addWidget(self.buttons[b], i/2 + 1, i%2)
 
         self.setLayout(self.lay)
 
@@ -83,7 +125,7 @@ class AllData(QWidget):
 
         self.lay = QHBoxLayout()
         self.plots = AllPlotsWidget()
-        self.indicators = PlotWidget()
+        self.indicators = Indicators()
         self.lay.addWidget(self.plots)
         self.lay.addWidget(self.indicators)
 
@@ -97,7 +139,7 @@ class FileSelector(QWidget):
         self.lay = QHBoxLayout()
         self.file_input = QLineEdit()
         self.age_input = QLineEdit()
-        self.button = QPushButton()
+        self.button = QPushButton("Analyze")
 
         self.lay.addWidget(self.file_input)
         self.lay.addWidget(self.age_input)
