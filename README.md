@@ -33,6 +33,9 @@ pipenv shell
 python main.py
 ```
 
+The project was build with and tested on `python 3.7`. At the time of writing
+`tensorflow` does not support `python 3.8`.
+
 ### Special thanks
 We would like to thank Eleonora D'Arnese and Marco D. Santambrogio for their continuous
 support to the project.
