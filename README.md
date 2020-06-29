@@ -1,4 +1,4 @@
-#ANOMALOUS
+# ANOMALOUS
 This is the official repository of the Anomalous project for the 2020
 "Progetto di Ingegneria Informatica" exam. The authors are:
 - Luigi Fusco (10601210)
@@ -11,7 +11,7 @@ block beat, right bundle branch block beat, atrial premature beat, supraventricu
 premature orectopic beat, premature ventricular contraction and R-on-T premature
 ventricular contraction, with varying degree of precision.
 
-##Installation
+## Installation
 Anomalous is build using the `python` programming language and makes use of several
 libraries and frameworks. It supports `pipenv` for the easy creation of ready to use
 virtual environments. `pipenv` requires `python` and `pip` to be installed in your sistem,
@@ -33,6 +33,6 @@ pipenv shell
 python main.py
 ```
 
-###Special thanks
+### Special thanks
 We would like to thank Eleonora D'Arnese and Marco D. Santambrogio for their continuous
 support to the project.
