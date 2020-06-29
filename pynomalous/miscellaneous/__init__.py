@@ -1,6 +1,8 @@
 """
 Contains various utility functions
 """
+import glob
+
 
 def get_notes():
     """
