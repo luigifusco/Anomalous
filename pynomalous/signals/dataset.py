@@ -51,6 +51,7 @@ def segment_signal(signal, length=2, skip=0.5, sample_rate=257):
 
     return segments
 
+
 def create_segmented_signals(signal, annmap, sample_rate=257, sec=2):
     """
     Creates segmented signals containing all possible anomalies from a signal and its annmap

@@ -1,5 +1,8 @@
 """
-Main module, contains the object interface to all functionalities
+Pynomalous is a tool for the automatic analysis of ECG signals, developed as a project for
+the "Progetto di Ingegneria Informatica" exam
+
+This is the main module, containing the object interface to all functionalities
 """
 
 from pynomalous.learning.predicting import load_trained_net
@@ -7,6 +10,9 @@ from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, sp
 
 
 class Pynomalous:
+    """
+    Main class used as an interface to the whole system. It is used by the GUI
+    """
     def __init__(self, notes):
         self.notes = notes
         self.nets = {n: load_trained_net(n) for n in notes}
