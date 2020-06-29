@@ -7,15 +7,16 @@ This is the main module, containing the object interface to all functionalities
 
 from pynomalous.learning.predicting import load_trained_net
 from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, split_overlapping, get_bradycardia_level, get_tachycardia_level
+from pynomalous.miscellaneous import get_notes
 
 
 class Pynomalous:
     """
     Main class used as an interface to the whole system. It is used by the GUI
     """
-    def __init__(self, notes):
-        self.notes = notes
-        self.nets = {n: load_trained_net(n) for n in notes}
+    def __init__(self):
+        self.notes = get_notes()
+        self.nets = {n: load_trained_net(n) for n in self.notes}
         self.filt = get_filter()
 
     def predict_segments(self, segments, note):

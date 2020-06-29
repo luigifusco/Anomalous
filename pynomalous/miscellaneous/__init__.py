@@ -9,7 +9,7 @@ def get_notes():
     :return: a list containing all notes
     """
     with open('data/notes.txt') as file:
-        notes = [line for line in file]
+        notes = [line[0] for line in file]
 
     return notes
 

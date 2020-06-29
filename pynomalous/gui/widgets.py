@@ -132,17 +132,19 @@ class AllData(QWidget):
         self.setLayout(self.lay)
 
 
-class FileSelector(QWidget):
+class FileSelectorWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.lay = QHBoxLayout()
+        self.lay = QGridLayout()
         self.file_input = QLineEdit()
         self.age_input = QLineEdit()
         self.button = QPushButton("Analyze")
 
-        self.lay.addWidget(self.file_input)
-        self.lay.addWidget(self.age_input)
+        self.lay.addWidget(QLabel("filename:"), 0, 0)
+        self.lay.addWidget(self.file_input, 0, 1)
+        self.lay.addWidget(QLabel("age:"), 1, 0)
+        self.lay.addWidget(self.age_input, 1, 1)
         self.lay.addWidget(self.button)
 
         self.setLayout(self.lay)
@@ -153,10 +155,8 @@ class MainWindow(QWidget):
         super().__init__(parent)
 
         self.lay = QVBoxLayout()
-        self.file_selector = FileSelector()
         self.all_data = AllData()
 
-        self.lay.addWidget(self.file_selector)
         self.lay.addWidget(self.all_data)
 
         self.setLayout(self.lay)

@@ -2,8 +2,9 @@ import sys
 
 from PySide2.QtCore import QFile, QObject, Signal, QTimer
 from PySide2.QtWidgets import QApplication
+import pynomalous
 
-from pynomalous.gui.widgets import PlotWidget, AllData, MainWindow
+from pynomalous.gui.widgets import PlotWidget, AllData, MainWindow, FileSelectorWindow
 
 import math
 import numpy as np
@@ -35,8 +36,19 @@ if __name__ == "__main__":
     dsl = DSL()
     dsl.mainLoop()
 
-    matplotlib_widget = MainWindow()
-    matplotlib_widget.show()
+    main_window = MainWindow()
+    file_selector_window = FileSelectorWindow()
+    file_selector_window.show()
 
-    #dsl.dataChanged.connect(matplotlib_widget.update_plot)
+    def main_window_launcher():
+        file_selector_window.close()
+        file_name = file_selector_window.file_input.text()
+        age = file_selector_window.age_input.text()
+
+        pyn = pynomalous.Pynomalous()
+
+        main_window.show()
+
+    file_selector_window.button.clicked.connect(main_window_launcher)
+
     sys.exit(app.exec_())
