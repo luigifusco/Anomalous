@@ -13,6 +13,26 @@ import pynomalous.miscellaneous
 from pynomalous.signals.processing import get_filter, filter_signal
 
 
+def read_and_filter_wfdb(filename, length=None):
+    """
+    Reads and filters a signal in Physionet format and returns a numpy array
+
+    :param filename: the name of the file
+    :param length: the length of the file to return or None for max length
+    :return: the filtered and cut signal as a numpy array
+    """
+    record = wfdb.rdrecord(filename)
+
+    if length is None:
+        signal = record.p_signal
+    else:
+        signal = record.p_signal[:length, :]
+    filt = get_filter()
+    signal = filter_signal(signal, filt)
+
+    return signal
+
+
 def create_segmented_signals(signal, annmap, sample_rate=257, sec=2):
     """
     Creates segmented signals containing all possible anomalies from a signal and its annmap
@@ -58,6 +78,7 @@ def create_segmented_signals(signal, annmap, sample_rate=257, sec=2):
                 )
 
     return segments
+
 
 
 def create_dataset(note, sample_rate=257):
