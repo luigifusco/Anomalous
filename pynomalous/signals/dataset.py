@@ -33,6 +33,24 @@ def read_and_filter_wfdb(filename, length=None):
     return signal
 
 
+def segment_signal(signal, length=2, skip=0.5, sample_rate=257):
+    """
+    Segments a signal into overlapping sections with defined length and skip size
+
+    :param signal: the signal to segment
+    :param length: the length of each segment (in seconds)
+    :param skip: length of the space between the start of two contiguous signals (in seconds)
+    :param sample_rate: the sample rate of the signal
+    :return: a list containing numpy arrays representing the signal segments
+    """
+    seg_len = int(length * sample_rate)
+    skip_len = int(skip * sample_rate)
+    segments = []
+    for i in range(signal.shape[0], skip_len):
+        segments.append(signal[i:i+seg_len])
+
+    return segments
+
 def create_segmented_signals(signal, annmap, sample_rate=257, sec=2):
     """
     Creates segmented signals containing all possible anomalies from a signal and its annmap
