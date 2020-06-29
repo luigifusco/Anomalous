@@ -3,7 +3,7 @@ import sys
 from PySide2.QtCore import QFile, QObject, Signal, QTimer
 from PySide2.QtWidgets import QApplication
 
-from pynomalous.gui.widgets import AllData
+from pynomalous.gui.widgets import PlotWidget, AllData, MainWindow
 
 import math
 import numpy as np
@@ -35,8 +35,8 @@ if __name__ == "__main__":
     dsl = DSL()
     dsl.mainLoop()
 
-    matplotlib_widget = AllData()
+    matplotlib_widget = MainWindow()
     matplotlib_widget.show()
 
-    dsl.dataChanged.connect(matplotlib_widget.plots.derivations.plots[0].update_plot)
+    #dsl.dataChanged.connect(matplotlib_widget.update_plot)
     sys.exit(app.exec_())

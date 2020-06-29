@@ -1,22 +1,47 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'anomalousMainPage.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.2
-#
-# WARNING! All changes made in this file will be lost!
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QVBoxLayout
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(931, 630)
+class PlotWidget(QtWidgets.QWidget):
+    def __init__(self, parent=None, w=400, h=350, toolbar=False):
+        super().__init__(parent)
+
+        self.fig, self.ax = plt.subplots()
+        self.canvas = FigureCanvas(self.fig)
+        self.lay = QVBoxLayout(self)
+        if toolbar:
+            self.toolbar = NavigationToolbar(self.canvas, self)
+            self.lay.addWidget(self.toolbar)
+        self.lay.addWidget(self.canvas)
+
+        self.line, *_ = self.ax.plot([])
+
+        self.setLayout(self.lay)
+        self.setFixedSize(w, h)
+
+    def update_plot(self, data):
+        self.line.set_data(range(len(data)), data)
+
+        self.ax.set_xlim(0, len(data))
+        self.ax.set_ylim(min(data), max(data))
+        self.fig.tight_layout()
+        self.canvas.draw()
+
+
+class MainWindow(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__(self)
+        self.initUI()
+
+    def initUi(self):
+        self.setObjectName("MainWindow")
+        self.resize(931, 630)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.graphWidget = QtWidgets.QWidget(self.centralwidget)
+        self.graphWidget = PlotWidget()
         self.graphWidget.setGeometry(QtCore.QRect(20, 70, 511, 551))
         self.graphWidget.setObjectName("graphWidget")
         self.gridLayoutWidget_2 = QtWidgets.QWidget(self.graphWidget)

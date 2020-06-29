@@ -1,6 +1,6 @@
 from PySide2.QtCore import Slot
 import PySide2.QtCore as QtCore
-from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout, QWidget, QComboBox, QFormLayout
+from PySide2.QtWidgets import QVBoxLayout, QHBoxLayout, QWidget, QComboBox, QFormLayout, QLineEdit, QPushButton
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -86,5 +86,35 @@ class AllData(QWidget):
         self.indicators = PlotWidget()
         self.lay.addWidget(self.plots)
         self.lay.addWidget(self.indicators)
+
+        self.setLayout(self.lay)
+
+
+class FileSelector(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.lay = QHBoxLayout()
+        self.file_input = QLineEdit()
+        self.age_input = QLineEdit()
+        self.button = QPushButton()
+
+        self.lay.addWidget(self.file_input)
+        self.lay.addWidget(self.age_input)
+        self.lay.addWidget(self.button)
+
+        self.setLayout(self.lay)
+
+
+class MainWindow(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.lay = QVBoxLayout()
+        self.file_selector = FileSelector()
+        self.all_data = AllData()
+
+        self.lay.addWidget(self.file_selector)
+        self.lay.addWidget(self.all_data)
 
         self.setLayout(self.lay)
