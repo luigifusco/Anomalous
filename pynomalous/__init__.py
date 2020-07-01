@@ -8,6 +8,8 @@ This is the main module, containing the object interface to all functionalities
 from pynomalous.learning.predicting import load_trained_net
 from pynomalous.signals.processing import get_filter, filter_signal, get_bpm, split_overlapping, get_bradycardia_level, get_tachycardia_level
 from pynomalous.miscellaneous import get_notes
+import numpy as np
+import os
 
 
 class Pynomalous:
@@ -27,6 +29,18 @@ class Pynomalous:
         :return: list of predictions
         """
         return self.nets[note].predict_classes(segments)
+
+    def load_test_data(self, note):
+        """
+        Fetches the test data for a particular anomaly
+
+        :param note: the anomaly
+        :return: a tuple containing test data and labels
+        """
+
+        data = np.load(os.path.join('data', 'mals', 'mal_' + note + '.mal'))
+
+        return data["testX"], data["testY"]
 
     def analyze_signal(self, signal, age, freq=257):
         analysis = {"bpm": {}, "anomalies": {}}

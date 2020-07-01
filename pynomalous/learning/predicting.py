@@ -5,6 +5,7 @@ Contrains functions relative to predicting using the neural networks
 import os
 
 from pynomalous.learning.training import get_model
+from keras.models import load_model
 
 
 def load_trained_net(mal):
@@ -15,8 +16,7 @@ def load_trained_net(mal):
     :param weights_root: the root directory of the network weights
     :return: the trained model
     """
-    weights_root = os.path.join(os.getcwd(), 'data', 'models')
-    model = get_model()
-    model.load_weights(os.path.join(weights_root, 'model_' + mal + '.h5'))
+    model_root = os.path.join(os.getcwd(), 'data', 'models')
+    model = load_model(os.path.join(model_root, 'model_' + mal + '.h5'))
 
     return model
