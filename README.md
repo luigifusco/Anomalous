@@ -20,16 +20,21 @@ and can be installed with:
 python -m pip install pipenv
 ```
 
-To download the project and setup the virtual environment type:
+To download the project and setup and start the virtual environment type:
 ```bash
 git clone https://github.com/luigifusco/Anomalous.git
 cd Anomalous
 pipenv install
+pipenv shell
+```
+
+Alternatively all libraries can be installed in the current `python` environment with:
+```bash
+python -m pip install -r requirements.txt
 ```
 
 To run the project go in the `Anomalous` folder and type:
 ```bash
-pipenv shell
 python main.py
 ```
 
