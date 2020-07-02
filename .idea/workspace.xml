@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34f17f93-f9e3-4d89-a2bc-fa5abdd0d745" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="8da41fde-f7f5-4be1-a0bd-edc0320f8d6d" />
+  <component name="ProjectId" id="1biiAaI9PIPW1SG0PqSFklM297g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/prova.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luigi\PycharmProjects\Anomalous" />
+      <recent name="C:\Users\luigi\PycharmProjects\Anomalous\src\pynomalous" />
+      <recent name="C:\Users\luigi\PycharmProjects\Anomalous\data" />
+      <recent name="C:\Users\luigi\PycharmProjects\Anomalous\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.guiMainPage">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Anomalous" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="guiLauncher (1)" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="Anomalous" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guiLauncher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="guiLauncher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Anomalous" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\luigi\PycharmProjects\Anomalous\guiLauncher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="guiMainPage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Anomalous" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynomalous/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynomalous/gui/guiMainPage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.guiLauncher" />
+      <item itemvalue="Python.guiLauncher (1)" />
+      <item itemvalue="Python.guiMainPage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.guiMainPage" />
+        <item itemvalue="Python.guiLauncher (1)" />
+        <item itemvalue="Python.guiLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34f17f93-f9e3-4d89-a2bc-fa5abdd0d745" name="Default Changelist" comment="" />
+      <created>1589121172233</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589121172233</updated>
+      <workItem from="1589732311101" duration="3443000" />
+      <workItem from="1589924944946" duration="6525000" />
+      <workItem from="1589969011561" duration="4110000" />
+      <workItem from="1589975095977" duration="1468000" />
+      <workItem from="1589985596380" duration="1683000" />
+      <workItem from="1589998527976" duration="679000" />
+      <workItem from="1593338648961" duration="2652000" />
+      <workItem from="1593426465298" duration="6836000" />
+      <workItem from="1593454570378" duration="3114000" />
+      <workItem from="1593457703220" duration="7402000" />
+      <workItem from="1593630789554" duration="1372000" />
+      <workItem from="1593676471325" duration="87000" />
+      <workItem from="1593718011691" duration="755000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Pipfile" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="509" y="334" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589984432369">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="509" y="334" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1589984432369" />
+    <state x="784" y="363" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589734632997">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="784" y="363" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1122@0.0.2048.1122" timestamp="1589734632997" />
+    <state x="755" y="308" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589407590920">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="755" y="308" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2048.1122@0.0.2048.1122" timestamp="1589407590920" />
+    <state x="805" y="316" key="FileChooserDialogImpl" timestamp="1589384295106">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="805" y="316" key="FileChooserDialogImpl/0.0.2048.1122@0.0.2048.1122" timestamp="1589384295106" />
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom" timestamp="1593457686686">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.bottom/0.0.2048.1122@0.0.2048.1122" timestamp="1593457686686" />
+    <state width="2005" height="300" key="GridCell.Tab.0.center" timestamp="1593457686686">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.center/0.0.2048.1122@0.0.2048.1122" timestamp="1593457686686" />
+    <state width="2005" height="300" key="GridCell.Tab.0.left" timestamp="1593457686686">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.left/0.0.2048.1122@0.0.2048.1122" timestamp="1593457686686" />
+    <state width="2005" height="300" key="GridCell.Tab.0.right" timestamp="1593457686686">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state width="2005" height="300" key="GridCell.Tab.0.right/0.0.2048.1122@0.0.2048.1122" timestamp="1593457686686" />
+    <state x="727" y="215" key="SettingsEditor" timestamp="1589734198409">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="727" y="215" key="SettingsEditor/0.0.2048.1122@0.0.2048.1122" timestamp="1589734198409" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1589383532409">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.2048.1122@0.0.2048.1122" timestamp="1589383532409" />
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1589735098634">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="687" y="246" width="672" height="678" key="search.everywhere.popup/0.0.2048.1122@0.0.2048.1122" timestamp="1589735098634" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Anomalous$scratch.coverage" NAME="scratch Coverage Results" MODIFIED="1589938947973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Anomalous$guiLauncher.coverage" NAME="guiLauncher Coverage Results" MODIFIED="1589973226818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/Anomalous$guiLauncher__1_.coverage" NAME="guiLauncher (1) Coverage Results" MODIFIED="1593456791608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
