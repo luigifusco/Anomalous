@@ -1,5 +1,5 @@
-# ANOMALOUS
-This is the official repository of the Anomalous project for the 2020
+# A faster approach to ECG analysis in emergency situations
+This is the official repository of the "A faster approach to ECG analysis in emergency situations" project for the 2020
 "Progetto di Ingegneria Informatica" exam. The authors are:
 - Luigi Fusco (10601210)
 - Ian Di Dio Lavore (10580652)
