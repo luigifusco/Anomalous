@@ -33,9 +33,16 @@ Alternatively all libraries can be installed in the current `python` environment
 python -m pip install -r requirements.txt
 ```
 
-To run the project go in the `Anomalous` folder and type:
+A full version of the `data` folder is available [here](https://polimi365-my.sharepoint.com/:f:/g/personal/10601210_polimi_it/Emj2B52XqjRGhQeFKiAx9EgBn-obS18bqhYUAccYyfPw6A?e=zmia3C). Please replace the folder coming with this repo before running the demos.
+
+To run a demo of the anomaly detection go in the `Anomalous` folder and type:
 ```bash
 python main.py
+```
+
+To see she WIP GUI type
+```bash
+python gui_launcher.py
 ```
 
 The project was build with and tested on `python 3.7`. At the time of writing
