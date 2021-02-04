@@ -1,9 +1,9 @@
 # A faster approach to ECG analysis in emergency situations
 This is the official repository of the "A faster approach to ECG analysis in emergency situations" project for the 2020
 "Progetto di Ingegneria Informatica" exam. The authors are:
-- Luigi Fusco (10601210)
-- Ian Di Dio Lavore (10580652)
-- Marco Di Gennaro (10596841)
+- Luigi Fusco
+- Ian Di Dio Lavore
+- Marco Di Gennaro
 
 Anomalous is a full stack ECG analysis system. It is capable of detecting tachycardia,
 bradycardia and several other heartbeat anomalies, more specifically left bundlebranch
